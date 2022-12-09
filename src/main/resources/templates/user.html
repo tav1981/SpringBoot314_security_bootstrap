@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--бутстрап-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</head>
+
+<!--мой стиль-->
+<div th:insert="~{parts/style :: style}"></div>
+
+<body>
+
+<!--шапка-->
+<div th:insert="~{parts/header :: header}"></div>
+
+<!--тело-->
+<div class="container-fluid ">
+    <div class="row">
+        <!--боковое меню-->
+        <div class="d-flex align-items-start">
+            <div class="col-2 nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">User</button>
+            </div>
+            <div class="col-10 tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <!--верхние вкладки меню-->
+                    <div>
+                        <div class="bg-light" >
+                            <!--внутренности вкладки-->
+                            <div th:insert="~{parts/userTable :: userTable}"></div>
+                        </div>
+
+                    </div>
+                    <!--+++++++++++++++++++++++-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

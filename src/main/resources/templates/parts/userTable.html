@@ -1,0 +1,32 @@
+<div class=" card  bg-light px-4 p-5" xmlns:th="http://www.thymeleaf.org" th:fragment="userTable">
+    <h1>Welcome to User PAGE!</h1>
+    <div class="card-header border">
+        <h5 class="card-title">About user</h5>
+    </div>
+    <div class="card-body bg-body border p-3 table-responsive">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td th:text="${user.getId()}"/>
+                    <td th:text="${user.getUsername()}"/>
+                    <td th:text="${user.getUsername()}"/>
+                    <td th:text="${user.getUsername()}"/>
+                    <td th:text="${user.getEmail()}"/>
+                    <td >
+                        <p th:each="roles : ${user.getRoles()}" th:text="' ' + ${roles.getName()}"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
